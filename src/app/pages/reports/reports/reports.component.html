@@ -1,0 +1,71 @@
+<app-bread-crumb [items]="[{text: 'Relatório de Receitas e Despesas'}]"></app-bread-crumb>
+
+<app-page-header page-title="Relatório de Receitas e Despesas" [show-button]="false"></app-page-header>
+
+
+<div class="card">
+  <div class="card-header">
+    Selecione o Mês e Ano para gerar os relatórios
+  </div>
+
+  <div class="card-body">
+    <div class="form-row">
+
+      <!-- date -->
+      <div class="form-group col-md-2">
+        <label for="dateini">De</label>
+        <p-calendar id="dateini" formControlName="dateini" inputStyleClass="form-control" dataType="string"
+          dateFormat="dd/mm/yy" [locale]="ptBR" [showButtonBar]="true">
+        </p-calendar>
+      </div>
+
+      <div class="form-group col-md-2">
+        <label for="dateend">Até</label>
+        <p-calendar id="datend" formControlName="datend" inputStyleClass="form-control" dataType="string"
+          dateFormat="dd/mm/yy" [locale]="ptBR" [showButtonBar]="true">
+        </p-calendar>
+      </div>
+
+      <div class="col-md-5">
+        <label for="dateend">Categorias</label>
+        <select id="inputState" class="form-control">
+          <option selected>Selecionar</option>
+          <option></option>
+        </select>
+      </div>
+
+      <div class="col-md-3">
+        <label for="dateend">Tipo</label>
+        <select id="inputState" class="form-control">
+          <option selected>Selecionar</option>
+          <option></option>
+          <option>Despesa</option>
+          <option>Receita</option>
+        </select>
+      </div>
+
+      <div class="col-md-3">
+        <label for="dateend">Situação</label>
+        <select id="inputState" class="form-control">
+          <option selected>Selecionar</option>
+          <option></option>
+          <option>Pago</option>
+          <option>Pendente</option>
+        </select>
+      </div>
+
+    </div>
+
+    <div class="form-row">
+
+    </div>
+    <hr>
+    <div class="form-row">
+      <div class="col-md text-right">
+        <button type="button" (click)="generateReports()" class="btn btn-primary">
+          Gerar Relatório
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

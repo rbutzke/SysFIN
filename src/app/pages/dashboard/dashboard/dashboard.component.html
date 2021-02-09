@@ -1,0 +1,58 @@
+<app-bread-crumb
+  [items]="[{text: 'Resumo de Receitas e Despesas Mensais'}]"
+></app-bread-crumb>
+
+<app-page-header
+  page-title="Resumo de Receitas e Despesas Mensais"
+  [show-button]="false"
+></app-page-header>
+
+<div class="card-deck mt-5 mb-5">
+  <div class="card text-center text-white bg-success">
+    <div class="card-header">
+      TOTAL DE RECEITAS
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">
+        {{revenueTotal}}
+      </h3>
+    </div>
+  </div>
+
+  <div class="card text-center text-white bg-danger">
+    <div class="card-header">
+      TOTAL DE DESPESAS
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">
+        {{expenseTotal}}
+      </h3>
+    </div>
+  </div>
+
+  <div class="card text-center text-white bg-info">
+    <div class="card-header">
+      SALDO
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">
+        {{balance}}
+      </h3>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="row mt-5 mb-4">
+  <div class="col-md-6">
+    <p-chart type="bar" [data]="revenueChartData" [options]="chartOptions"></p-chart>
+  </div>
+
+  <div class="col-md-6">
+    <p-chart type="bar" [data]="expenseChartData" [options]="chartOptions"></p-chart>
+  </div>
+</div>
+
+
+
